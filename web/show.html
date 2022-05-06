@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" >
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/controlTable.js"></script>
+
+</head>
+<body>
+    <div>
+        <div class="dt"> 路径名：
+            <label>
+                <select id="path">
+                    <option value="radiate">radiate</option>
+                </select>
+            </label>
+        </div>
+        <div class="dt"> 项目名：
+            <label>
+                <select id="sequence_name">
+                    <option value="tiny_foggy">tiny_foggy</option>
+<!--                    <option value="qita">其他</option>-->
+                </select>
+            </label>
+        </div>
+<!--        <div>root_path:<input type="text" id="path" value="data/radiate/"></div>-->
+<!--        <div>sequence_name:<input type="text" id="sequence_name" value="tiny_foggy"></div>-->
+        <input type="button" value="确定路径" onclick="py(document.getElementById('path'),document.getElementById('sequence_name'))">
+        <div id="pathName"></div>
+        <button id="startPY" style="display: none" onclick="imgSolve(document.getElementById('path'),document.getElementById('sequence_name'))">开始数据处理</button>
+        <div id="solveComplete" style="display: none">数据处理完成
+            <div id="imgArea">
+                <img id="img1" class="imgPlace">
+                <img id="img2" class="imgPlace">
+                <img id="img3" class="imgPlace">
+                <img id="img4" class="imgPlace">
+            </div>
+            <button id="movie" onclick="img2movie()">开始轮播</button>
+
+        </div>
+    </div>
+    <div>
+<!--        <div name="path">{undefined{pathname|escape}}</div>-->
+    </div>
+
+    <div class="navigation">
+        <a class="navigate" onclick="jump(0)">用户指南</a>
+        <a class="navigate" onclick="jump(1)">主页</a>
+        <a class="navigate" onclick="jump(2)">csv文件自选</a>
+        <div class="navigate" onclick="jump(3)">融合预览</div>
+        <div class="navigate" onclick="jump(4)">可视化预览</div>
+        <!--    <a href="/loader">loader</a>-->
+    </div>
+</body>
+</html>

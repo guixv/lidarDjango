@@ -1,0 +1,81 @@
+.navigation{
+    float: top;
+    position: fixed;
+    width: 100%;
+    background: black;
+    bottom: 0px;
+    left: 0;
+}
+
+.imgPlace{
+    width: 500px;
+    height: 500px;
+    float: left;
+    position: relative;
+}
+
+.guideStyle{
+    display: block;
+    position: fixed;
+    width: 20%;
+    height: 500px;
+}
+
+.navigate{
+    float: left;
+    position: relative;
+    width: 100px;
+    border: 5px gray dotted;
+    color: aliceblue;
+    padding: 4px;
+    text-align: center;
+}
+
+.guide{
+    position: absolute;
+    width: 250px;
+    border: antiquewhite 1px solid;
+    border-radius: 5px;
+    text-align: left;
+    color: antiquewhite;
+}
+
+#indexCloud{
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 90%;
+    position: relative;
+    float: contour;
+    overflow: hidden;
+}
+
+
+#viewImg{
+    width: 400px;
+    height: 400px;
+    float: left;
+    position: relative;
+}
+
+#pointCloud{
+    width: 400px;
+    height: 600px;
+    float: left;
+    position: relative;
+
+}
+
+#Nevtech{
+    width: 100%;
+}
+
+#container1{
+
+    width: 400px;
+    height: 400px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+
+}
