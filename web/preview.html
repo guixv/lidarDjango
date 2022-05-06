@@ -13,12 +13,28 @@
   <script src="../static/js/stats.min.js" type="text/javascript"></script>
   <script src="../static/js/OrbitControls.js" type="text/javascript"></script>
   <script src="../static/js/jquery.min.js" type="text/javascript"></script>
+  <script src="../static/js/fault.js" type="text/javascript"></script>
+  <script src="../static/js/previewControl.js" type="text/javascript"></script>
+
+
 
 </head>
 <body style="background: #e2bb8c">
 <div id="indexStyle">
   <div class="guideStyle">
     在此处选择想要查看的对象
+    <div>
+      <input id="previewBackground" value="0xe2bb8c">
+      <label>
+                <select id="previewColor">
+                    <option value="1">白色</option>
+                    <option value="2">黑色</option>
+                    <option value="3">反射强度_蓝黑</option>
+<!--                    <option value="qita">其他</option>-->
+                </select>
+            </label>
+      <button onclick="startDIY()"></button>
+    </div>
   </div>
   <div id="indexCloud">
     <div id="indexContainer1">
@@ -37,32 +53,11 @@
   <div class="navigate" onclick="jump(4)">可视化预览</div>
   <!--    <a href="/loader">loader</a>-->
 </div>
-
 <script>
-  function csvToJson(filePath) {
-    let result = [];
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", filePath, false);
-    xhr.onload = function (e) {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          result = str2JSON(xhr.responseText)
-        } else {
-          console.error(xhr.statusText);
-        }
-      }
-    };
-    xhr.send(null);
-    return result
-  }
-
-
-
   let points = csvToJson("../static/source/000001.csv");
   pointCloudMaker(points,"indexContainer1","indexContainer2",800,900,0xe2bb8c,3,1,0)
 
 </script>
-
 </body>
 
 </html>

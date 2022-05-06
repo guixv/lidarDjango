@@ -15,6 +15,12 @@ function initIndex(){
 
 }
 
+function initPreview(){
+    document.getElementById("indexContainer1").innerHTML = "";
+    document.getElementById("indexContainer2").innerHTML = "";
+
+}
+
 function myRefresh(){
 
     window.location.reload();

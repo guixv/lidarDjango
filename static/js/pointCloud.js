@@ -124,6 +124,8 @@ function createParticles(points,color,size) {
         } else if (color===3){
             let min = (intensity*25+40) < 255 ? (intensity*25+40) : 255;
             geom.colors.push(new THREE.Color(min));
+        } else {
+            geom.colors.push(new THREE.Color(color));
         }
     }
     console.log("load done!");
