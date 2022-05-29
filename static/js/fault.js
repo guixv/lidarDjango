@@ -9,7 +9,7 @@ function initIndex(){
     document.getElementById("frameTip").innerHTML = " ";
     document.getElementById("frame").innerHTML = " ";
     document.getElementById('result').innerHTML = " ";
-    document.getElementById('Nevtech').innerHTML = "<img id=\"viewImg\">";
+    // document.getElementById('Nevtech').innerHTML = "<img id=\"viewImg\">";
     document.getElementById("container1").innerHTML = "";
     document.getElementById("container2").innerHTML = "";
 

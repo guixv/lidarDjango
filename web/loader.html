@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="lidar" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="lidar"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>loader</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css" >
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <script src="../static/js/csvLoader.js" type="text/javascript"></script>
     <script src="../static/js/pictureLoad.js" type="text/javascript"></script>
     <script src="../static/js/controlTable.js" type="text/javascript"></script>
@@ -16,39 +17,84 @@
     <script src="../static/js/OrbitControls.js" type="text/javascript"></script>
     <script src="../static/js/jquery.min.js" type="text/javascript"></script>
 </head>
-<body>
-    <div class="navigation">
-        <div class="navigate" onclick="jump(1)">主页</div>
-        <div class="navigate" onclick="jump(2)">csv文件自选</div>
+<body style="background: #e0c29f">
+<div class="navigation">
+    <div class="navigate" onclick="jump(0)">用户指南</div>
+    <div class="navigate" onclick="jump(1)">主页</div>
+    <div class="navigate" onclick="jump(2)">csv文件自选</div>
+    <div class="navigate" onclick="jump(3)">融合预览</div>
+    <div class="navigate" onclick="jump(4)">可视化预览</div>
+    <!--    <a href="/loader">loader</a>-->
+</div>
+<div id="indexStyle">
+    <div class="guideStyle">
+        在此处选择想要查看的对象
+        <div>
+            读取csv文本：
+            <input type="file" id="file1" accept="*"/>
+        </div>
+        <button onclick="readFileButton(document.getElementById('file1'),document.getElementById('pro'))">开始读取</button>
+        <div>
+            显示csv读取进度：
+            <progress id="pro" value="0"></progress>
+        </div>
+        <div class="guideOption">
+            <div>
+                <div id="name"></div>
+                <div id="frameTip"></div>
+                <div id="frame"></div>
+                <div id="result"></div>
+            </div>
+        </div>
+        <div>
+            <div class="guideOption">
+                <input id="previewBackground" value="0xe0c29f"><br>
+                输入背景颜色
+                <hr>
+            </div>
+            <div class="guideOption">
+                <label>
+                    选择渲染方案<br>
+                    <select id="previewColor">
+                        <option value="5">高度</option>
+                        <option value="1">白色</option>
+                        <option value="2">黑色</option>
+                        <option value="3">反射强度_蓝黑</option>
+                        <option value="4">反射强度_黑灰</option>
+                        <option value="6">高度_彩色</option>
+                        <!--                      <option value="qita">其他</option>-->
+                    </select>
+                </label>
+                <hr>
+            </div>
+            <div class="guideOption">
+                <label>
+                    1%
+                    <input type="range" id="pointSize" value="100" max="200" min="1">
+                    200%
+                </label>
+                <br>选择点的大小比例
+                <hr>
+            </div>
+        </div>
+
+            <div class="guideOption">
+                <button onclick="readFileButton(document.getElementById('file1'),document.getElementById('pro'))">加载新方案</button>
+
+            </div>
+
+
     </div>
-    <div>
-        读取csv文本：
-        <input type="file" id="file1" accept="*"/>
-    </div>
-    <button onclick="readFileButton(document.getElementById('file1'),document.getElementById('pro'))">开始读取</button>
-    <div>
-        显示csv读取进度：
-        <progress id="pro" value="0"></progress>
-    </div>
-    <div>
-        <div id="name"></div>
-        <div id="frameTip"></div>
-        <div id="frame"></div>
-        <div id="result"></div>
-    </div>
-    <div id="Nevtech">
-        <img id="viewImg">
-    </div>
-    <div id="pointCloud">
+</div>
+
+    <div id="previewCloud">
         <div id="container1">
 
         </div>
-        <div id="container2">
+        <div id="container2" style="display: none">
 
         </div>
     </div>
-
-
 
 
 </body>

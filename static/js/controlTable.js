@@ -10,8 +10,10 @@ function readFileButton(file1,pro){
 
     let points = csvLoader(file1,pro);
     let frame = document.getElementById("frame").innerText;
-    previewImage(file1,frame);
-    pointCloudMaker(points,"container1","container2",400,400,0xFFFFFF,0);
+    // previewImage(file1,frame);
+    pointCloudMaker(points,"container1","container2",900,900,
+        parseInt(document.getElementById('previewBackground').value),parseInt(document.getElementById('previewColor').value),
+        parseInt(document.getElementById('pointSize').value)/100,0);
     // pointCloudMaker();
 }
 

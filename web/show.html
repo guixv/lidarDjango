@@ -32,10 +32,14 @@
         <button id="startPY" style="display: none" onclick="imgSolve(document.getElementById('path'),document.getElementById('sequence_name'))">开始数据处理</button>
         <div id="solveComplete" style="display: none">数据处理完成
             <div id="imgArea">
-                <img id="img1" class="imgPlace">
-                <img id="img2" class="imgPlace">
-                <img id="img3" class="imgPlace">
-                <img id="img4" class="imgPlace">
+                <div class="rawLen">
+                    <img id="img1" class="imgPlace" onclick="jump(4)">
+                    <img id="img2" class="imgPlace">
+                </div>
+                <div class="rawLen">
+                    <img id="img3" class="imgPlace">
+                    <img id="img4" class="imgPlace">
+                </div>
             </div>
             <button id="movie" onclick="img2movie()">开始轮播</button>
 
@@ -46,9 +50,9 @@
     </div>
 
     <div class="navigation">
-        <a class="navigate" onclick="jump(0)">用户指南</a>
-        <a class="navigate" onclick="jump(1)">主页</a>
-        <a class="navigate" onclick="jump(2)">csv文件自选</a>
+        <div class="navigate" onclick="jump(0)">用户指南</div>
+        <div class="navigate" onclick="jump(1)">主页</div>
+        <div class="navigate" onclick="jump(2)">csv文件自选</div>
         <div class="navigate" onclick="jump(3)">融合预览</div>
         <div class="navigate" onclick="jump(4)">可视化预览</div>
         <!--    <a href="/loader">loader</a>-->

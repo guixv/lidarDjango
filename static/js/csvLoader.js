@@ -38,6 +38,7 @@ function csvLoader(file1,pro){
 
     let points = [];
     let pointing = storage.string;
+    console.log(pointing);
     points = str2JSON(pointing);
     console.log(points[1]);
     console.log(points[1].xx);

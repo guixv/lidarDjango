@@ -18,6 +18,7 @@ function initScene(background) {
 }
 
 function initCamera() {
+    // camera = new THREE.OrthographicCamera(50, 5, 20, 5);
     camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
     camera.position.set(0, -50, 200);
     camera.lookAt(new THREE.Vector3());
@@ -95,11 +96,11 @@ function createParticles(points,color,size) {
         geom.colors.push(new THREE.Color(0xFFFFFF));
     }
     let material = new THREE.PointCloudMaterial({size: size, vertexColors: true, color: 0xFFFFFF});
-    if (color===0){
-        material = new THREE.PointCloudMaterial({size: size, vertexColors: true, color: 0x000000});
-    } else if (color===1){
-        material = new THREE.PointCloudMaterial({size: size, vertexColors: true, color: 0xFFFFFF});
-    }
+    // if (color===0){
+    //     material = new THREE.PointCloudMaterial({size: size, vertexColors: true, color: 0x000000});
+    // } else if (color===1){
+    //     material = new THREE.PointCloudMaterial({size: size, vertexColors: true, color: 0xFFFFFF});
+    // }
     let jslength=0;
 
     for(let js2 in points){
@@ -123,8 +124,16 @@ function createParticles(points,color,size) {
             geom.colors.push(new THREE.Color(0xFFFFFF));
         } else if (color===3){
             let min = (intensity*25+40) < 255 ? (intensity*25+40) : 255;
-            geom.colors.push(new THREE.Color(min));
-        } else {
+            geom.colors.push(new THREE.Color(0,0,1-min/256));
+        } else if (color===4){
+            let min = (intensity*25+40) < 255 ? (intensity*25+40) : 255;
+            geom.colors.push(new THREE.Color(min/256,min/256,min/256));
+        } else if (color===5){
+            geom.colors.push(new THREE.Color(z*0.15+0.5,z*0.15+ 0.5,z*0.15+0.5));
+        } else if (color===6){
+            let co = 0xFFFFFF * (z*0.15+0.5)
+            geom.colors.push(new THREE.Color(z*0.15+0.5,0.2,1-(z*0.15+0.5)));
+        }else {
             geom.colors.push(new THREE.Color(color));
         }
     }
