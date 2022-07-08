@@ -17,13 +17,21 @@
     <script src="../static/js/OrbitControls.js" type="text/javascript"></script>
     <script src="../static/js/jquery.min.js" type="text/javascript"></script>
 </head>
-<body style="background: #e0c29f">
-<div class="navigation">
-    <div class="navigate" onclick="jump(0)">用户指南</div>
-    <div class="navigate" onclick="jump(1)">主页</div>
-    <div class="navigate" onclick="jump(2)">csv文件自选</div>
-    <div class="navigate" onclick="jump(3)">融合预览</div>
-    <div class="navigate" onclick="jump(4)">可视化预览</div>
+<body style="background: #e0c29f" id="body">
+<div class="navigation1">
+    <h2 style="position: fixed;left: 40px">多模态数据的可视化融合平台</h2>
+    <div id="guide" class="navigate1" onmouseover="addUnderline('guide')" onmouseleave="deleteUnderline('guide')" onclick="jump(0)">用户指南</div>
+    <div id="index" class="navigate1" onmouseover="addUnderline('index')" onmouseleave="deleteUnderline('index')"  onclick="jump(1)">主页</div>
+    <div id="csv" class="navigate1" onmouseover="addUnderline('csv')" onmouseleave="deleteUnderline('csv')"  onclick="jump(2)">csv文件自选</div>
+    <div id="preview" class="navigate1" onmouseover="addUnderline('preview')" onmouseleave="deleteUnderline('preview')"  onclick="jump(4)">可视化预览</div>
+    <div id="fusion" class="navigate1" onmouseover="addUnderline('fusion')" onmouseleave="deleteUnderline('fusion')"  onclick="jump(3)">融合预览</div>
+    <div id="changeBack" class="navigate1">
+        <div id="background1" class="changeBack" style="background: #e0c29f" onclick="changeBackground('e0c29f')"></div>
+        <div id="background2" class="changeBack" style="background: #7FFFD4" onclick="changeBackground('7FFFD4')"></div>
+        <div id="background3" class="changeBack" style="background: #FFF8DC" onclick="changeBackground('FFF8DC')"></div>
+        <div id="background4" class="changeBack" style="background: #a67cbb" onclick="changeBackground('a67cbb')"></div>
+        一键换肤
+    </div>
     <!--    <a href="/loader">loader</a>-->
 </div>
 <div id="indexStyle">

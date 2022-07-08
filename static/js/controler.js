@@ -1,4 +1,4 @@
-const {Vector3} = require("./lib/three");
+const {Vector3} = require("three.js");
 
 
 

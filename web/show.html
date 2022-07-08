@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>show</title>
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css" >
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/controlTable.js"></script>
 
 </head>
-<body>
-    <div>
+<body style="background: #e0c29f" id="body">
+<div>
+    <div class="guideStyle">
         <div class="dt"> 路径名：
             <label>
                 <select id="path">
@@ -21,41 +22,67 @@
             <label>
                 <select id="sequence_name">
                     <option value="tiny_foggy">tiny_foggy</option>
-<!--                    <option value="qita">其他</option>-->
+                    <!--                    <option value="qita">其他</option>-->
                 </select>
             </label>
         </div>
-<!--        <div>root_path:<input type="text" id="path" value="data/radiate/"></div>-->
-<!--        <div>sequence_name:<input type="text" id="sequence_name" value="tiny_foggy"></div>-->
-        <input type="button" value="确定路径" onclick="py(document.getElementById('path'),document.getElementById('sequence_name'))">
+        <!--        <div>root_path:<input type="text" id="path" value="data/radiate/"></div>-->
+        <!--        <div>sequence_name:<input type="text" id="sequence_name" value="tiny_foggy"></div>-->
+        <input type="button" value="确定路径"
+               onclick="py(document.getElementById('path'),document.getElementById('sequence_name'))">
         <div id="pathName"></div>
-        <button id="startPY" style="display: none" onclick="imgSolve(document.getElementById('path'),document.getElementById('sequence_name'))">开始数据处理</button>
-        <div id="solveComplete" style="display: none">数据处理完成
-            <div id="imgArea">
-                <div class="rawLen">
-                    <img id="img1" class="imgPlace" onclick="jump(4)">
-                    <img id="img2" class="imgPlace">
-                </div>
-                <div class="rawLen">
-                    <img id="img3" class="imgPlace">
-                    <img id="img4" class="imgPlace">
-                </div>
-            </div>
-            <button id="movie" onclick="img2movie()">开始轮播</button>
+        <button id="startPY" style="display: none"
+                onclick="imgSolve(document.getElementById('path'),document.getElementById('sequence_name'))">开始数据处理
+        </button>
+        <div class="guideOption">
+            <h4 id="solving">
+            </h4>
+        </div>
+        <button id="movie" onclick="img2movie()" style="display: none">开始轮播</button>
 
+    </div>
+    <div id="solveComplete" style="display: none">
+        <div id="imgArea">
+            <div class="imgAndText">
+                <img id="img1" class="imgPlace" onclick="jump(4)">
+            <h6 class="textPlace">激光雷达点云</h6>
+            </div>
+            <div class="imgAndText">
+                <img id="img2" class="imgPlace">
+            <h6 class="textPlace">可视图像与激光雷达融合</h6>
+            </div>
+            <div class="imgAndText">
+                <img id="img3" class="imgPlace">
+            <h6 class="textPlace">毫米波雷达点云</h6>
+            </div>
+            <div class="imgAndText">
+                <img id="img4" class="imgPlace">
+            <h6 class="textPlace">激可视图像（右相机）</h6>
+            </div>
+        </div>
+        <div id="textArea">
         </div>
     </div>
-    <div>
-<!--        <div name="path">{undefined{pathname|escape}}</div>-->
-    </div>
+</div>
+<div>
+    <!--        <div name="path">{undefined{pathname|escape}}</div>-->
+</div>
 
-    <div class="navigation">
-        <div class="navigate" onclick="jump(0)">用户指南</div>
-        <div class="navigate" onclick="jump(1)">主页</div>
-        <div class="navigate" onclick="jump(2)">csv文件自选</div>
-        <div class="navigate" onclick="jump(3)">融合预览</div>
-        <div class="navigate" onclick="jump(4)">可视化预览</div>
-        <!--    <a href="/loader">loader</a>-->
+<div class="navigation1">
+    <h2 style="position: fixed;left: 40px">多模态数据的可视化融合平台</h2>
+    <div id="guide" class="navigate1" onmouseover="addUnderline('guide')" onmouseleave="deleteUnderline('guide')" onclick="jump(0)">用户指南</div>
+    <div id="index" class="navigate1" onmouseover="addUnderline('index')" onmouseleave="deleteUnderline('index')"  onclick="jump(1)">主页</div>
+    <div id="csv" class="navigate1" onmouseover="addUnderline('csv')" onmouseleave="deleteUnderline('csv')"  onclick="jump(2)">csv文件自选</div>
+    <div id="preview" class="navigate1" onmouseover="addUnderline('preview')" onmouseleave="deleteUnderline('preview')"  onclick="jump(4)">可视化预览</div>
+    <div id="fusion" class="navigate1" onmouseover="addUnderline('fusion')" onmouseleave="deleteUnderline('fusion')"  onclick="jump(3)">融合预览</div>
+    <div id="changeBack" class="navigate1">
+        <div id="background1" class="changeBack" style="background: #e0c29f" onclick="changeBackground('e0c29f')"></div>
+        <div id="background2" class="changeBack" style="background: #7FFFD4" onclick="changeBackground('7FFFD4')"></div>
+        <div id="background3" class="changeBack" style="background: #FFF8DC" onclick="changeBackground('FFF8DC')"></div>
+        <div id="background4" class="changeBack" style="background: #a67cbb" onclick="changeBackground('a67cbb')"></div>
+        一键换肤
     </div>
+    <!--    <a href="/loader">loader</a>-->
+</div>
 </body>
 </html>

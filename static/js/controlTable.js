@@ -79,6 +79,7 @@ let frame2time = {
 }
 let count = 0
 
+
 function imgSolve(path,sequence_name){
     let storage = window.localStorage;
     console.log('1222')
@@ -91,7 +92,13 @@ function imgSolve(path,sequence_name){
         }),
         dataType:"json",
         async: false,
+        beforeSend:function (){
+            console.log("sending...")
+            document.getElementById('solving').innerHTML="<hr>" +
+                "正在处理数据中";
+        },
         success: function (data) {
+            document.getElementById('solving').innerHTML="<hr>数据处理完成"
             document.getElementById('solveComplete').style.display="block"
             document.getElementById('img1').src = '../static/saved_images/'+document.getElementById('sequence_name').innerText+'/'+data[1]+'/lidar_vis.png'
             document.getElementById('img2').src = '../static/saved_images/'+document.getElementById('sequence_name').innerText+'/'+data[1]+'/overlay_right_bb.png'
@@ -101,8 +108,11 @@ function imgSolve(path,sequence_name){
             frame2time = data
             console.log(frame2time)
             storage.data = data
+            document.getElementById('movie').style.display="block"
         },
-
+        error: function (){
+            document.getElementById('solving').innerText="数据处理发生未知错误"
+        }
     });
 }
 
@@ -111,7 +121,7 @@ let showTime
 function img2movie(){
     let movieButton = document.getElementById('movie')
     if(movieButton.innerText==='开始轮播'){
-        showTime = setInterval(moving,1000);
+        showTime = setInterval(moving,500);
         movieButton.innerText='停止轮播'
     }else {
         clearInterval(showTime)
@@ -135,3 +145,16 @@ function moving(){
 
 }
 
+function addUnderline(id){
+    document.getElementById(id).style.textDecoration="underline"
+}
+
+function deleteUnderline(id){
+    document.getElementById(id).style.textDecoration="none"
+}
+
+function changeBackground(color){
+    let x=document.getElementById("body");
+    x.style.background='#'+color
+    document.getElementById("previewBackground").value='0x'+color
+}

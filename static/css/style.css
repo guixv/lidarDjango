@@ -8,11 +8,65 @@
     left: 0;
 }
 
-.imgPlace{
-    width: 500px;
-    height: 500px;
+.navigate{
     float: left;
     position: relative;
+    width: 100px;
+    border: 5px gray dotted;
+    color: aliceblue;
+    padding: 4px;
+    text-align: center;
+}
+
+.navigation1{
+    z-index: 100;
+    float: top;
+    position: fixed;
+    width: 100%;
+    top: 20px;
+    left: 0;
+    font-weight: bold;
+}
+
+.changeBack{
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: 15px;
+    float: left;
+}
+
+.navigate1{
+    font-size: larger;
+    left: 20%;
+    float: left;
+    position: relative;
+    width: 200px;
+    padding: 4px;
+    text-align: center;
+}
+
+.imgPlace{
+    width: 300px;
+    height: 300px;
+    float: left;
+    position: relative;
+}
+
+.textPlace{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+
+.imgAndText{
+    left: 35px;
+    top: 15px;
+    float: left;
+    position: relative;
+    height: 355px;
+    width: 315px;
 }
 
 .rawLen{
@@ -31,7 +85,9 @@
 .guideStyle{
     display: block;
     position: fixed;
-    width: 17%;
+    top: 100px;
+    left: 50px;
+    width: 15%;
     height: 500px;
     background: aliceblue;
     border: lightgray 4px solid;
@@ -39,15 +95,6 @@
     overflow: auto;
 }
 
-.navigate{
-    float: left;
-    position: relative;
-    width: 100px;
-    border: 5px gray dotted;
-    color: aliceblue;
-    padding: 4px;
-    text-align: center;
-}
 
 .guide{
     position: absolute;
@@ -69,6 +116,8 @@
 }
 
 #previewCloud{
+    border: rgba(128, 128, 128, 0.44);
+    border: 2px dotted;
     top: 0;
     left: 20%;
     width: 80%;
@@ -84,6 +133,7 @@
     height: 400px;
     float: left;
     position: relative;
+    left: 5px;
 }
 
 #pointCloud{
@@ -106,4 +156,15 @@
     position: relative;
     overflow: hidden;
 
+}
+
+#solveComplete{
+    top: 150px;
+    position: absolute;
+    left: 20%;
+    float: left;
+    border: dotted 3px;
+    width: 70%;
+    height: 400px;
+    overflow: auto;
 }
